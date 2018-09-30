@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1537332535 source:/home/anja-ubuntu/Documents/2018 Fall Semester/CS 2336/CodeBlocks/Project Zero/main.cpp
+	<iostream>
+	<fstream>
+	<stdlib.h>
+	<stdio.h>
+	<iomanip>
+	<string>
+	<cmath>
+	<ctype.h>
+
