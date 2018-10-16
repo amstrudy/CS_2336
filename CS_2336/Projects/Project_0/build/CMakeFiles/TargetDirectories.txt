@@ -1,0 +1,3 @@
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_0/build/CMakeFiles/edit_cache.dir
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_0/build/CMakeFiles/project_0.dir
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_0/build/CMakeFiles/rebuild_cache.dir

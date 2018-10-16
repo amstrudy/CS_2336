@@ -1,0 +1,62 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Customer.h
+iostream
+-
+
+../include/PreferredCustomerGold.h
+Customer.h
+../include/Customer.h
+
+../include/PreferredCustomerPlatinum.h
+Customer.h
+../include/Customer.h
+PreferredCustomerGold.h
+../include/PreferredCustomerGold.h
+
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/Customer.cpp
+Customer.h
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/Customer.h
+
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/PreferredCustomerGold.cpp
+Customer.h
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/Customer.h
+PreferredCustomerGold.h
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/PreferredCustomerGold.h
+
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/PreferredCustomerPlatinum.cpp
+Customer.h
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/Customer.h
+PreferredCustomerPlatinum.h
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/PreferredCustomerPlatinum.h
+
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/main.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+string
+-
+iterator
+-
+iomanip
+-
+algorithm
+-
+typeinfo
+-
+Customer.h
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/Customer.h
+PreferredCustomerGold.h
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/PreferredCustomerGold.h
+PreferredCustomerPlatinum.h
+/home/anja-ubuntu/Documents/2018 Fall Semester/CS_2336/Projects/Project_1/src/PreferredCustomerPlatinum.h
+

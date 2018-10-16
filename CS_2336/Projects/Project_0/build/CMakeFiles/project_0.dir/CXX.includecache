@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_0/src/main.cpp
+iostream
+-
+fstream
+-
+stdlib.h
+-
+stdio.h
+-
+iomanip
+-
+string
+-
+cmath
+-
+ctype.h
+-
+
