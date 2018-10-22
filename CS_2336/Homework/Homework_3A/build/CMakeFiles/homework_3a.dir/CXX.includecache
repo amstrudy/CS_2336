@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/MyArray.h
+iostream
+-
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_3A/src/MyArray.cpp
+MyArray.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_3A/src/MyArray.h
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_3A/src/main.cpp
+MyArray.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_3A/src/MyArray.h
+MyArray.cpp
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_3A/src/MyArray.cpp
+
