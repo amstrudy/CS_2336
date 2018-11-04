@@ -10,7 +10,7 @@
 #include "TheaterSeat.h"
 #include "Auditorium.h"
 
-#define FILENAME "A1.txt"
+#define FILENAME "A3base.txt"
 
 Auditorium::Auditorium()
 {
@@ -27,7 +27,7 @@ Auditorium::Auditorium()
         }
 
         // get length of rows and cols
-        for (size_t i = 0; lineStr[i] != '\0'; ++i)
+        for (size_t i = 0; i < lineStr.length(); ++i)
             ++numCols;
 
         while (getline(theater, lineStr))
@@ -44,6 +44,7 @@ Auditorium::Auditorium()
         TheaterSeat *up = nullptr, *left = nullptr, *prevFirst = nullptr;
         while (getline(theater, lineStr))
         {
+            std::cout << lineStr << std::endl;
             for (size_t i = 0; lineStr[i] != '\0'; ++i)
             {
                 TheaterSeat *ts = new TheaterSeat(rowOn, (static_cast<unsigned int>('A') + i), lineStr[i] != '.', lineStr[i]);

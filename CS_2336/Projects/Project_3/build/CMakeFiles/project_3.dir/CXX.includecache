@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/BinarySearchTree.h
+Node.h
+../include/Node.h
+
+../include/Node.h
+string
+-
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/BinarySearchTree.cpp
+iostream
+-
+BinarySearchTree.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/BinarySearchTree.h
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/Node.cpp
+string
+-
+Node.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/Node.h
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/main.cpp
+iostream
+-
+Node.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/Node.h
+BinarySearchTree.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/BinarySearchTree.h
+BinarySearchTree.cpp
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/BinarySearchTree.cpp
+
