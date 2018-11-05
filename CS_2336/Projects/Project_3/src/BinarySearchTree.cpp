@@ -5,16 +5,16 @@
 #include "BinarySearchTree.h"
 
 template <typename T>
-int insertNode (T *root, T *newNode)
+int insertNode (T *root, T *newNode) // recursive helper function for insertion
 {
-    if (root->getTitle() > newNode->getTitle())
+    if (root->getTitle() > newNode->getTitle()) // go left
     {
         if (!root->getLeft())
             root->setLeft(newNode);
         else
             return 1 + insertNode(root->getLeft(), newNode);
     }
-    else
+    else // go right
     {
         if (!root->getRight())
             root->setRight(newNode);
@@ -25,34 +25,33 @@ int insertNode (T *root, T *newNode)
 }
 
 template <typename T>
-T * searchNode (T *root, T *newNode)
+T * searchNode (T *root, T *newNode) // recurseive helper search function
 {
-    if (root == nullptr)
-        return nullptr;
-    if (newNode->getTitle() == root->getTitle())
+    if (root == nullptr || newNode->getTitle() == root->getTitle())
+    {
         return root;
+    }
     if (newNode->getTitle() < root->getTitle())
-        searchNode(root->getLeft(), newNode);
-    else
-        searchNode(root->getRight(), newNode);
+        return searchNode(root->getLeft(), newNode); // search left
+    return searchNode(root->getRight(), newNode); // search right
 }
 
 template <typename T>
-int deleteNode (T **root, T *newNode)
+int deleteNode (T **root, T *newNode) // recursive helper delete function
 {
     T * tmp = *root;
     if (tmp == nullptr) return -1; // doesn't exist in tree
     if (newNode->getTitle() < tmp->getTitle())
     {
         int depth = deleteNode(tmp->getLeftPtr(), newNode);
-        return depth == -1 ? -1 : 1 + depth;
+        return depth == -1 ? -1 : 1 + depth; // return depth of deleted node
     }
     if (newNode->getTitle() > tmp->getTitle())
     {
         int depth = deleteNode(tmp->getRightPtr(), newNode);
         return depth == -1 ? -1 : 1 + depth;
     }
-    if (tmp->getLeft() && tmp->getRight())
+    if (tmp->getLeft() && tmp->getRight()) // once you've reached the node you want to delete
     {
         T *next = min(tmp->getRight());
         tmp->setTitle(next->getTitle());
@@ -61,7 +60,7 @@ int deleteNode (T **root, T *newNode)
         deleteNode(tmp->getRightPtr(), next);
         return 0;
     }
-    if (tmp->getLeft() == nullptr)
+    if (tmp->getLeft() == nullptr) // if it's null, it's easier
     {
         *root = tmp->getRight();
     }
@@ -72,7 +71,7 @@ int deleteNode (T **root, T *newNode)
 }
 
 template <typename T>
-T * min (T *root)
+T * min (T *root) // find leftmost node (the min) recursively
 {
     if (root->getLeft() == nullptr)
         return root;
@@ -80,7 +79,7 @@ T * min (T *root)
 }
 
 template <typename T>
-void printNode (T *root)
+void printNode (T *root) // recursive helper print function, not used in final code
 {
     static int depth = 0;
     if (root == nullptr)
@@ -114,11 +113,26 @@ void printNode (T *root)
     }
 }
 
-template <typename T>
-BinarySearchTree<T>::BinarySearchTree () {}
+template <class T>
+void clearNode (T **root) // recursive helper clear function
+{
+    T *tmp = *root;
+    if (tmp == nullptr)
+        return;
+    clearNode(tmp->getLeftPtr());
+    clearNode(tmp->getRightPtr());
+    delete tmp;
+    *root = nullptr;
+}
 
 template <typename T>
-int BinarySearchTree<T>::insertBST (T *newNode)
+BinarySearchTree<T>::BinarySearchTree ()
+{
+    this->root = nullptr;
+}
+
+template <typename T>
+int BinarySearchTree<T>::insertBST (T *newNode) // just calls helper function
 {
     if (this->root == nullptr)
     {
@@ -137,14 +151,6 @@ T * BinarySearchTree<T>::searchBST (T *newNode)
 template <typename T>
 int BinarySearchTree<T>::deleteBST (T *newNode)
 {
-    /*T * foundNode = this->searchBST(newNode);
-    if (foundNode->getAvailable() == 0)
-        return deleteNode(&(this->root), newNode);
-    else
-    {
-        foundNode->setAvailable(foundNode->getAvailable() - 1);
-        return 0;
-    }*/
     return deleteNode(&(this->root), newNode);
 }
 
@@ -155,3 +161,8 @@ void BinarySearchTree<T>::printBST ()
     std::cout << std::endl;
 }
 
+template <typename T>
+void BinarySearchTree<T>::clearBST () // deletes all nodes in tree
+{
+    clearNode(&(this->root));
+}

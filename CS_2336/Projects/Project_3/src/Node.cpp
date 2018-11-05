@@ -4,13 +4,19 @@
 #include <string>
 #include "Node.h"
 
-Node::Node () {}
+Node::Node ()
+{
+    this->left = nullptr;
+    this->right = nullptr;
+}
 
 Node::Node (std::string title, int available, int rented)
 {
     this->title = title;
     this->available = available;
     this->rented = rented;
+    this->left = nullptr;
+    this->right = nullptr;
 }
 
 Node::Node (Node& copy)

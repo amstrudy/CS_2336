@@ -16,6 +16,7 @@ class BinarySearchTree
         T * searchBST (T *);
         int deleteBST (T *);
         void printBST ();
+        void clearBST ();
         T * min ();
     protected:
     private:
