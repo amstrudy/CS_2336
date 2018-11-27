@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/Graph.h
+Node.h
+../include/Node.h
+
+../include/Node.h
+iostream
+-
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_8/src/Graph.cpp
+iostream
+-
+fstream
+-
+sstream
+-
+Graph.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_8/src/Graph.h
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_8/src/Node.cpp
+Node.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_8/src/Node.h
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_8/src/main.cpp
+iostream
+-
+fstream
+-
+Graph.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_8/src/Graph.h
+

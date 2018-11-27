@@ -11,8 +11,8 @@
 #include "BinarySearchTree.h"
 #include "BinarySearchTree.cpp"
 
-#define INVENTORY_FILE_NAME "inventory.dat"
-#define TRANSACTION_LOG_NAME "transaction.log"
+#define INVENTORY_FILE_NAME "inventory1.dat"
+#define TRANSACTION_LOG_NAME "transaction1a.log"
 #define ERROR_LOG_NAME "error.log"
 #define OUTPUT_FILE_NAME "redbox_kiosk.txt"
 
@@ -229,7 +229,12 @@ void parseTransactions (BinarySearchTree<Node>& kiosk)
                     break;
                 }
             }
-            if (isntDigit) continue;
+            if (isntDigit || lineStr.length() == 0)
+            {
+                //error
+                writeError(errored, error, lineStrCopy);
+                continue;
+            }
             int num = stoi(lineStr);
             if (num < 0)
             {

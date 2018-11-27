@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/HashMap.h
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_7/src/HashMap.cpp
+iostream
+-
+math.h
+-
+HashMap.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_7/src/HashMap.h
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_7/src/main.cpp
+string
+-
+math.h
+-
+iostream
+-
+HashMap.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_7/src/HashMap.h
+

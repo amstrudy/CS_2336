@@ -10,7 +10,7 @@
 #include "TheaterSeat.h"
 #include "Auditorium.h"
 
-#define FILENAME "A3base.txt"
+#define FILENAME "A2abase.txt"
 
 Auditorium::Auditorium()
 {
