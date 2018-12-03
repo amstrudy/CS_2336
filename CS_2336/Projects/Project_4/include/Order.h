@@ -24,6 +24,7 @@ class Order
         void setNumChildTickets (unsigned int var) { this->numChildTickets = var; }
         unsigned int getNumSeniorTickets () { return this->numSeniorTickets; }
         void setNumSeniorTickets (unsigned int var) { this->numSeniorTickets = var; }
+        Seat *** getSeatsPtr () { return &(this->seats); }
         friend std::ostream& operator<< (std::ostream&, const Order&);
         void appendSeat (Seat *);
         void deleteSeat (Seat *);

@@ -33,7 +33,7 @@ std::ostream& operator<< (std::ostream& out, const Order& o)
     out << o.auditorium << "\t\t" << o.numAdultTickets << "\t" << o.numChildTickets << "\t" << o.numSeniorTickets << "\t\t";
     for (size_t i = 0; i < o.numSeats; ++i)
     {
-        out << o.seats[i]->getTheaterSeat()->getRow() << o.seats[i]->getTheaterSeat()->getSeat() << "(" << o.seats[i]->getTheaterSeat()->getTicketType() << ")  ";
+        out << o.seats[i]->getTheaterSeat()->getRow()+1 << o.seats[i]->getTheaterSeat()->getSeat() << "(" << o.seats[i]->getTheaterSeat()->getTicketType() << ")  ";
     }
     out << std::endl;
     return out;
@@ -52,22 +52,30 @@ void Order::appendSeat (Seat *newSeat)
     this->seats = newSeats;
 }
 
+void s (Seat ** & a, Seat ** & b)
+{
+    a = b;
+}
+
 void Order::deleteSeat (Seat *deleteSeat)
 {
     Seat ** newSeats = new Seat*[this->numSeats-1];
-    for (size_t i = 0; i < this->numSeats; ++i)
+    Seat *** newSeatsPtr = &newSeats;
+    std::cout << deleteSeat->getTheaterSeat()->getRow() << std::endl;
+    for (size_t i = 0, j = 0; i < this->numSeats; ++i)
     {
         if (this->seats[i]->getTheaterSeat()->getRow() == deleteSeat->getTheaterSeat()->getRow() && this->seats[i]->getTheaterSeat()->getSeat() == deleteSeat->getTheaterSeat()->getSeat())
         {
             // skip this seat
             deleteSeat->getTheaterSeat()->setReserved(false);
             deleteSeat->getTheaterSeat()->setTicketType('.');
-            delete deleteSeat;
+            j--;
+            //delete deleteSeat;
         }
         else
-            newSeats[i] = this->seats[i];
+            newSeats[j] = this->seats[i];
     }
     this->numSeats--;
     delete this->seats;
-    this->seats = newSeats;
+    s(this->seats, newSeats);
 }

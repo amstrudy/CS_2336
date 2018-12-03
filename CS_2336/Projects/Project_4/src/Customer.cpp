@@ -316,6 +316,7 @@ void Customer::view ()
     std::cout << "Auditorium\tAdult\tChild\tSenior\t\tSeats" << std::endl;
     for (size_t i = 0; i < this->ordersList1Length; ++i)
     {
+        std::cout << this->ordersList1Length << std::endl;
         std::cout << *(this->ordersList1[i]) << std::endl;
     }
     for (size_t i = 0; i < this->ordersList2Length; ++i)
@@ -500,15 +501,16 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
             char onChar = startingSeatLetter;
             for (size_t i = 0; i < numA; ++i)
             {
-                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 48));
+                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
                 newSeat->getTheaterSeat()->setReserved(true);
                 newSeat->getTheaterSeat()->setTicketType('A');
                 currentOrder->appendSeat(newSeat);
+                std::cout << currentOrder->getSeats()[1]->getTheaterSeat()->getTicketType() << std::endl;
                 onChar++;
             }
             for (size_t i = 0; i < numC; ++i)
             {
-                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 48));
+                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
                 newSeat->getTheaterSeat()->setReserved(true);
                 newSeat->getTheaterSeat()->setTicketType('C');
                 currentOrder->appendSeat(newSeat);
@@ -516,7 +518,7 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
             }
             for (size_t i = 0; i < numS; ++i)
             {
-                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 48));
+                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
                 newSeat->getTheaterSeat()->setReserved(true);
                 newSeat->getTheaterSeat()->setTicketType('S');
                 currentOrder->appendSeat(newSeat);
@@ -570,9 +572,12 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
             Seat *found = nullptr;
             for (size_t i = 0; i < currentOrder->getNumSeats(); ++i)
             {
-                if (currentOrder->getSeats()[i]->getTheaterSeat()->getRow() == rowNum && currentOrder->getSeats()[i]->getTheaterSeat()->getSeat() == seatLetter)
+                std::cout << rowNum << "CCCC" << std::endl;
+                if (currentOrder->getSeats()[i]->getTheaterSeat()->getRow() + 1 == rowNum && currentOrder->getSeats()[i]->getTheaterSeat()->getSeat() == seatLetter)
                 {
                     found = currentOrder->getSeats()[i];
+                    std::cout << "T " << found->getTheaterSeat()->getRow() << std::endl;
+                    break;
                 }
             }
             if (found == nullptr) // seat not in order
@@ -582,10 +587,12 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
             }
             else // delete seat from order
             {
-                TheaterSeat *curr = currentAuditorium->goTo(found->getTheaterSeat()->getRow() - 1, static_cast<int>(found->getTheaterSeat()->getSeat()) - 48);
+                TheaterSeat *curr = currentAuditorium->goTo(found->getTheaterSeat()->getRow(), static_cast<int>(found->getTheaterSeat()->getSeat()) - 65);
                 curr->setReserved(false);
                 curr->setTicketType('.');
+                std::cout << "tt" << std::endl;
                 currentOrder->deleteSeat(found);
+                currentOrdersListLength--;
                 std::cout << "The seat has been deleted." << std::endl;
                 if (currentOrder->getNumSeats() == 0) // delete order if empty
                 {
@@ -620,7 +627,7 @@ void Customer::display ()
         std::cout << "\tSeats: " << std::endl;
         for (size_t j = 0; j < this->ordersList1[i]->getNumSeats(); ++j)
         {
-            std::cout << "\t\tSeat #" << j+1 << ":\tRow Number: " << this->ordersList1[i]->getSeats()[j]->getTheaterSeat()->getRow() << "\tSeat Letter: " << this->ordersList1[i]->getSeats()[j]->getTheaterSeat()->getSeat() << "\tSeat Type: " << this->ordersList1[i]->getSeats()[j]->getTheaterSeat()->getTicketType() << std::endl;
+            std::cout << "\t\tSeat #" << j+1 << ":\tRow Number: " << this->ordersList1[i]->getSeats()[j]->getTheaterSeat()->getRow()+1 << "\tSeat Letter: " << this->ordersList1[i]->getSeats()[j]->getTheaterSeat()->getSeat() << "\tSeat Type: " << this->ordersList1[i]->getSeats()[j]->getTheaterSeat()->getTicketType() << std::endl;
         }
         std::cout << "\tAdult Tickets: " << this->ordersList1[i]->getNumAdultTickets() << std::endl;
         std::cout << "\tChild Tickets: " << this->ordersList1[i]->getNumChildTickets() << std::endl;
@@ -635,7 +642,7 @@ void Customer::display ()
         std::cout << "\tSeats: " << std::endl;
         for (size_t j = 0; j < this->ordersList2[i]->getNumSeats(); ++j)
         {
-            std::cout << "\t\tSeat #" << j+1 << ":\tRow Number: " << this->ordersList2[i]->getSeats()[j]->getTheaterSeat()->getRow() << "\tSeat Letter: " << this->ordersList2[i]->getSeats()[j]->getTheaterSeat()->getSeat() << "\tSeat Type: " << this->ordersList2[i]->getSeats()[j]->getTheaterSeat()->getTicketType() << std::endl;
+            std::cout << "\t\tSeat #" << j+1 << ":\tRow Number: " << this->ordersList2[i]->getSeats()[j]->getTheaterSeat()->getRow()+1 << "\tSeat Letter: " << this->ordersList2[i]->getSeats()[j]->getTheaterSeat()->getSeat() << "\tSeat Type: " << this->ordersList2[i]->getSeats()[j]->getTheaterSeat()->getTicketType() << std::endl;
         }
         std::cout << "\tAdult Tickets: " << this->ordersList2[i]->getNumAdultTickets() << std::endl;
         std::cout << "\tChild Tickets: " << this->ordersList2[i]->getNumChildTickets() << std::endl;
@@ -650,7 +657,7 @@ void Customer::display ()
         std::cout << "\tSeats: " << std::endl;
         for (size_t j = 0; j < this->ordersList3[i]->getNumSeats(); ++j)
         {
-            std::cout << "\t\tSeat #" << j+1 << ":\tRow Number: " << this->ordersList3[i]->getSeats()[j]->getTheaterSeat()->getRow() << "\tSeat Letter: " << this->ordersList3[i]->getSeats()[j]->getTheaterSeat()->getSeat() << "\tSeat Type: " << this->ordersList3[i]->getSeats()[j]->getTheaterSeat()->getTicketType() << std::endl;
+            std::cout << "\t\tSeat #" << j+1 << ":\tRow Number: " << this->ordersList3[i]->getSeats()[j]->getTheaterSeat()->getRow()+1 << "\tSeat Letter: " << this->ordersList3[i]->getSeats()[j]->getTheaterSeat()->getSeat() << "\tSeat Type: " << this->ordersList3[i]->getSeats()[j]->getTheaterSeat()->getTicketType() << std::endl;
         }
         std::cout << "\tAdult Tickets: " << this->ordersList3[i]->getNumAdultTickets() << std::endl;
         std::cout << "\tChild Tickets: " << this->ordersList3[i]->getNumChildTickets() << std::endl;
