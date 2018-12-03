@@ -13,8 +13,8 @@ class Administrator : public User
         Administrator ();
         Administrator (std::string, std::string);
         ~Administrator ();
-        void printReport (Auditorium **);
-        void exit ();
+        void printReport (Auditorium *, Auditorium *, Auditorium *);
+        void exitProgram (Auditorium *, Auditorium *, Auditorium *);
     protected:
     private:
 };

@@ -52,30 +52,31 @@ void Order::appendSeat (Seat *newSeat)
     this->seats = newSeats;
 }
 
-void s (Seat ** & a, Seat ** & b)
-{
-    a = b;
-}
-
 void Order::deleteSeat (Seat *deleteSeat)
 {
     Seat ** newSeats = new Seat*[this->numSeats-1];
-    Seat *** newSeatsPtr = &newSeats;
+    int index = -1;
     std::cout << deleteSeat->getTheaterSeat()->getRow() << std::endl;
-    for (size_t i = 0, j = 0; i < this->numSeats; ++i)
+    for (size_t i = 0; i < this->numSeats; ++i) // find index of thing to delete
     {
         if (this->seats[i]->getTheaterSeat()->getRow() == deleteSeat->getTheaterSeat()->getRow() && this->seats[i]->getTheaterSeat()->getSeat() == deleteSeat->getTheaterSeat()->getSeat())
         {
-            // skip this seat
-            deleteSeat->getTheaterSeat()->setReserved(false);
-            deleteSeat->getTheaterSeat()->setTicketType('.');
-            j--;
-            //delete deleteSeat;
+            index = i;
+            break;
         }
-        else
-            newSeats[j] = this->seats[i];
+    }
+    for (size_t i = index; i < this->numSeats-1; ++i)
+    {
+        this->seats[i] = this->seats[i+1];
+    }
+    deleteSeat->getTheaterSeat()->setReserved(false);
+    deleteSeat->getTheaterSeat()->setTicketType('.');
+    delete deleteSeat;
+    for (size_t i = 0; i < this->numSeats-1; ++i)
+    {
+        newSeats[i] = this->seats[i];
     }
     this->numSeats--;
     delete this->seats;
-    s(this->seats, newSeats);
+    this->seats = newSeats;
 }

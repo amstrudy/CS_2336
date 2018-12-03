@@ -63,6 +63,8 @@ String.h
 ../include/String.h
 
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Administrator.cpp
+iostream
+-
 Administrator.h
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Administrator.h
 

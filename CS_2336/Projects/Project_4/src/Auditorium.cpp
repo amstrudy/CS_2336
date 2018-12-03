@@ -95,6 +95,7 @@ Auditorium::Auditorium(std::string FILENAME)
         }
         this->height = numRows;
         this->length = numCols;
+        std::cout << "cols: " << this->length << std::endl;
         theater.close();
     }
     else
@@ -194,11 +195,16 @@ int * Auditorium::bestAvailable (unsigned int numSeats)
                 for (size_t k = 0; k < numSeats; ++k) // check that seats are free after starting seat
                 {
                     if (this->goTo(static_cast<unsigned int>(i), static_cast<unsigned int>(j+k))->getReserved())
+                    {
                         broken = true;
+                    }
                 }
                 if (broken == false) // seat combo exists
                 {
-                    dist = pow((pow(abs((this->length / 2.0) - (static_cast<double>(j) + (numSeats / 2.0))), 2.0) + pow(abs((this->height / 2.0) - i), 2.0)), 0.5); // distance formula
+                    double goalx = (this->length - 1) / 2.0 , goaly = (this->height - 1) / 2.0;
+                    double currx = j + ((numSeats - 1) / 2.0) , curry = i;
+
+                    dist = pow((pow(abs(goalx - currx), 2.0) + pow(abs(goaly - curry), 2.0)), 0.5); // distance formula
                     if (dist == 0)
                     {
                         minDist = 0;
@@ -255,7 +261,7 @@ TheaterSeat * Auditorium::goTo (unsigned int row, unsigned int column)
     return curr;
 }
 
-/*void Auditorium::writeOutput ()
+void Auditorium::writeOutput ()
 {
     // write output to file
     std::ofstream theater;
@@ -276,22 +282,4 @@ TheaterSeat * Auditorium::goTo (unsigned int row, unsigned int column)
             curr = curr->getRight();
     }
     theater.close();
-
-    // write output to command line
-    std::string s1 = "Total Seats in Auditorium:";
-    std::string s2 = "Total Tickets Sold:";
-    std::string s3 = "Adult Tickets Sold:";
-    std::string s4 = "Child Tickets Sold:";
-    std::string s5 = "Senior Tickets Sold:";
-    std::string s6 = "Total Ticket Sales:";
-    double totalSales = (this->getTotalA()*10.) + (this->getTotalC()*5.) + (this->getTotalS()*7.5);
-    std::cout << std::left << "AUDITORIUM FINAL REPORT\n" << std::endl;
-    std::cout << s1 << std::right << std::setw(50 - (int)s1.length()) << this->height * this->length << std::endl;
-    std::cout << s2 << std::right << std::setw(50 - (int)s2.length()) << this->getTotalA() + this->getTotalC() + this->getTotalS() << std::endl;
-    std::cout << s3 << std::right << std::setw(50 - (int)s3.length()) << this->getTotalA() << std::endl;
-    std::cout << s4 << std::right << std::setw(50 - (int)s4.length()) << this->getTotalC() << std::endl;
-    std::cout << s5 << std::right << std::setw(50 - (int)s5.length()) << this->getTotalS() << std::endl;
-    std::cout << s6 << std::flush;
-    for (size_t i = 0; i < (50 - s6.length() - (std::to_string(totalSales)).length() + 3); ++i) std::cout << " " << std::flush;
-    std::cout << "$" << std::fixed << std::setprecision(2) << totalSales << "\n\n\n" << std::endl;
-}*/
+}

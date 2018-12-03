@@ -178,7 +178,7 @@ void Customer::reserve (Auditorium *auditorium1, Auditorium *auditorium2, Audito
         while (true)
         {
             std::cin >> reserveConfirmS;
-            if (reserveConfirmS.length() == 1)
+            if (reserveConfirmS.length() == 1 && isalpha(reserveConfirmS[0]))
             {
                 reserveConfirm = static_cast<char>(toupper(reserveConfirmS[0]));
                 if (reserveConfirm == 'Y' || reserveConfirm == 'N')
@@ -312,20 +312,20 @@ void Customer::reserve (Auditorium *auditorium1, Auditorium *auditorium2, Audito
 
 void Customer::view ()
 {
+    unsigned int count = 0;
     std::cout << "\n" << this->username << "'S ORDERS\n" << std::endl;
-    std::cout << "Auditorium\tAdult\tChild\tSenior\t\tSeats" << std::endl;
+    std::cout << "Number\tAuditorium\tAdult\tChild\tSenior\t\tSeats" << std::endl;
     for (size_t i = 0; i < this->ordersList1Length; ++i)
     {
-        std::cout << this->ordersList1Length << std::endl;
-        std::cout << *(this->ordersList1[i]) << std::endl;
+        std::cout << ++count << "\t" << *(this->ordersList1[i]) << std::endl;
     }
     for (size_t i = 0; i < this->ordersList2Length; ++i)
     {
-        std::cout << *(this->ordersList2[i]) << std::endl;
+        std::cout << ++count << "\t" << *(this->ordersList2[i]) << std::endl;
     }
     for (size_t i = 0; i < this->ordersList3Length; ++i)
     {
-        std::cout << *(this->ordersList3[i]) << std::endl;
+        std::cout << ++count << "\t" << *(this->ordersList3[i]) << std::endl;
     }
     if (this->ordersList1Length == 0 && this->ordersList2Length == 0 && this->ordersList3Length == 0)
         std::cout << "There are no orders to display." << std::endl;
@@ -337,6 +337,7 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
     this->view();
     std::string menuSelectionS;
     unsigned int menuSelection;
+    unsigned int cA;
     Auditorium *currentAuditorium;
     Order *currentOrder;
     Order **currentOrdersList;
@@ -379,6 +380,7 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
         if ((menuSelection - 1) < this->ordersList1Length) // part of the first list
         {
             index = menuSelection - 1;
+            cA = 1;
             currentAuditorium = auditorium1;
             currentOrder = this->ordersList1[index];
             currentOrdersList = this->ordersList1;
@@ -387,6 +389,7 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
         else if ((menuSelection - 1) >= this->ordersList1Length && (menuSelection - 1) < this->ordersList2Length) // second list
         {
             index = menuSelection - 1 - this->ordersList1Length;
+            cA = 2;
             currentAuditorium = auditorium2;
             currentOrder = this->ordersList2[index];
             currentOrdersList = this->ordersList2;
@@ -395,6 +398,7 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
         else if ((menuSelection - 1) >= this->ordersList2Length && (menuSelection - 1) < this->ordersList3Length) // second list
         {
             index = menuSelection - 1 - this->ordersList2Length - this->ordersList2Length;
+            cA = 3;
             currentAuditorium = auditorium3;
             currentOrder = this->ordersList3[index];
             currentOrdersList = this->ordersList3;
@@ -406,7 +410,7 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
             std::cout << "1. Add tickets to order\n2. Delete tickets from order\n3. Cancel order\n" << std::endl;
             std::cout << "Select an action: " << std::flush;
             std::cin >> menuSelectionS;
-            if (menuSelectionS.length() == 1 && (menuSelectionS[0] == '1' || menuSelectionS[0] == '2' || menuSelectionS[2] == '3'))
+            if (menuSelectionS.length() == 1 && (menuSelectionS[0] == '1' || menuSelectionS[0] == '2' || menuSelectionS[0] == '3'))
             {
                 menuSelection = stoi(menuSelectionS);
                 break;
@@ -423,6 +427,8 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
             char startingSeatLetter;
 
             // ROW NUMBER
+            if (currentAuditorium == nullptr) std::cout << "NULL" << std::endl;
+
             std::cout << "Enter desired row number: " << std::endl;
             while (true)
             {
@@ -498,35 +504,44 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
                 std::cout << "Invalid input. Please try again.\n" << std::endl;
             }
 
-            char onChar = startingSeatLetter;
-            for (size_t i = 0; i < numA; ++i)
+            // CHECK IF OPEN
+            if (currentAuditorium->isAvailable(rowNum, startingSeatLetter, 1))
             {
-                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
-                newSeat->getTheaterSeat()->setReserved(true);
-                newSeat->getTheaterSeat()->setTicketType('A');
-                currentOrder->appendSeat(newSeat);
-                std::cout << currentOrder->getSeats()[1]->getTheaterSeat()->getTicketType() << std::endl;
-                onChar++;
+                char onChar = startingSeatLetter;
+                for (size_t i = 0; i < numA; ++i)
+                {
+                    Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
+                    newSeat->getTheaterSeat()->setReserved(true);
+                    newSeat->getTheaterSeat()->setTicketType('A');
+                    currentOrder->appendSeat(newSeat);
+                    std::cout << currentOrder->getSeats()[1]->getTheaterSeat()->getTicketType() << std::endl;
+                    onChar++;
+                }
+                for (size_t i = 0; i < numC; ++i)
+                {
+                    Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
+                    newSeat->getTheaterSeat()->setReserved(true);
+                    newSeat->getTheaterSeat()->setTicketType('C');
+                    currentOrder->appendSeat(newSeat);
+                    onChar++;
+                }
+                for (size_t i = 0; i < numS; ++i)
+                {
+                    Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
+                    newSeat->getTheaterSeat()->setReserved(true);
+                    newSeat->getTheaterSeat()->setTicketType('S');
+                    currentOrder->appendSeat(newSeat);
+                    onChar++;
+                }
+                currentOrder->setNumAdultTickets(currentOrder->getNumAdultTickets() + numA);
+                currentOrder->setNumChildTickets(currentOrder->getNumChildTickets() + numC);
+                currentOrder->setNumSeniorTickets(currentOrder->getNumSeniorTickets() + numS);
             }
-            for (size_t i = 0; i < numC; ++i)
+            else
             {
-                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
-                newSeat->getTheaterSeat()->setReserved(true);
-                newSeat->getTheaterSeat()->setTicketType('C');
-                currentOrder->appendSeat(newSeat);
-                onChar++;
+                std::cout << "The seat you selected is not available." << std::endl;
+                replaySubmenu = true;
             }
-            for (size_t i = 0; i < numS; ++i)
-            {
-                Seat *newSeat = new Seat(currentAuditorium->goTo(rowNum-1, static_cast<int>(onChar) - 65));
-                newSeat->getTheaterSeat()->setReserved(true);
-                newSeat->getTheaterSeat()->setTicketType('S');
-                currentOrder->appendSeat(newSeat);
-                onChar++;
-            }
-            currentOrder->setNumAdultTickets(currentOrder->getNumAdultTickets() + numA);
-            currentOrder->setNumChildTickets(currentOrder->getNumChildTickets() + numC);
-            currentOrder->setNumSeniorTickets(currentOrder->getNumSeniorTickets() + numS);
         }
         else if (menuSelection == 2) // DELETE
         {
@@ -534,6 +549,7 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
             unsigned int rowNum;
             char seatLetter;
 
+            if (currentAuditorium == nullptr) std::cout << "NULL" << std::endl;
             // ROW NUMBER
             std::cout << "Enter row number: " << std::endl;
             while (true)
@@ -610,6 +626,12 @@ void Customer::update (Auditorium *auditorium1, Auditorium *auditorium2, Auditor
                 curr->setTicketType('.');
             }
             deleteOrder(currentOrdersList, currentOrdersListLength, index);
+            if (cA == 1)
+                this->ordersList1Length = currentOrdersListLength;
+            else if (cA == 2)
+                this->ordersList2Length = currentOrdersListLength;
+            else if (cA == 3)
+                this->ordersList3Length = currentOrdersListLength;
             std::cout << "The order has been deleted." << std::endl;
         }
     }
@@ -684,10 +706,13 @@ void append (Order ** & ordersList, unsigned int& listLength, Order *newOrder)
 void deleteOrder (Order ** & ordersList, unsigned int& listLength, unsigned int index)
 {
     Order **newOrdersList = new Order*[listLength-1];
-    for (size_t i = 0; i < listLength; ++i)
+    for (size_t i = index; i < listLength-1; ++i)
     {
-        if (i != index)
-            newOrdersList[i] = ordersList[i];
+        ordersList[i] = ordersList[i+1];
+    }
+    for (size_t i = 0; i < listLength-1; ++i)
+    {
+        newOrdersList[i] = ordersList[i];
     }
     listLength--;
     delete [] ordersList;

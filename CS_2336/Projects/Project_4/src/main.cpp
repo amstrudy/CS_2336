@@ -23,6 +23,7 @@ using namespace std;
 void parseUsers (HashMap<String, User> *);
 User * logIn (HashMap<String, User> *);
 void menuSelectionCustomer (Customer *, Auditorium *, Auditorium *, Auditorium *);
+void menuSelectionAdministrator (Administrator *, Auditorium *, Auditorium *, Auditorium *);
 
 int main ()
 {
@@ -45,7 +46,7 @@ int main ()
         }
         if (user->getUserType() == ADMIN)
         {
-            break;
+            menuSelectionAdministrator(dynamic_cast<Administrator *>(user), auditorium1, auditorium2, auditorium3);
         }
     }
     return 0;
@@ -179,6 +180,48 @@ void menuSelectionCustomer (Customer *customer, Auditorium *auditorium1, Auditor
         else if (menuSelection == 5)
         {
             return;
+        }
+    }
+}
+
+void menuSelectionAdministrator (Administrator *administrator, Auditorium *auditorium1, Auditorium *auditorium2, Auditorium *auditorium3)
+{
+    string menuSelectionS;
+    unsigned int menuSelection;
+    while (true)
+    {    
+        cout << "\nMAIN MENU\n\n1. Print Report\n2. Log out\n3. Exit\n\n" << flush;
+        while (true)
+        {
+            cout << "What would you like to do (1-3)? " << flush;
+            cin >> menuSelectionS;
+            if (menuSelectionS.length() == 1 && isdigit(menuSelectionS[0]) && (menuSelectionS[0] == '1' || menuSelectionS[0] == '2' || menuSelectionS[0] == '3'))
+            {
+                menuSelection = stoi(menuSelectionS);
+                break;
+            }
+            else
+            {
+                cerr << "Invalid choice. Please try again." << endl;
+            }
+        }
+    
+        // PRINT REPORT
+        if (menuSelection == 1)
+        {
+            administrator->printReport(auditorium1, auditorium2, auditorium3);
+        }
+
+        // LOG OUT
+        else if (menuSelection == 2)
+        {
+            return;
+        }
+
+        // EXIT
+        else if (menuSelection == 3)
+        {
+            administrator->exitProgram(auditorium1, auditorium2, auditorium3);
         }
     }
 }

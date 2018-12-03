@@ -17,6 +17,10 @@ class Auditorium
         void setHeight (unsigned int val) { height = val; }
         unsigned int getLength () { return length; }
         void setLength (unsigned int val) {length = val; }
+        unsigned int getNumOpenSeats () { return this->numOpenSeats; }
+        void setNumOpenSeats (unsigned int var) { this->numOpenSeats = var; }
+        unsigned int getNumReservedSeats () { return this->numReservedSeats; }
+        void setNumReservedSeats (unsigned int var) { this->numReservedSeats = var; }
         unsigned int getTotalA () { return totalA; };
         void setTotalA (unsigned int val) { totalA = val; }
         unsigned int getTotalC () { return totalC; };
@@ -35,6 +39,8 @@ class Auditorium
         TheaterSeat *first;
         unsigned int height;
         unsigned int length;
+        unsigned int numOpenSeats;
+        unsigned int numReservedSeats;
         unsigned int totalA;
         unsigned int totalC;
         unsigned int totalS;
