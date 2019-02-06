@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/project_3.dir/src/main.cpp.o"
+  "CMakeFiles/project_3.dir/src/main2.cpp.o"
   "CMakeFiles/project_3.dir/src/Node.cpp.o"
   "CMakeFiles/project_3.dir/src/BinarySearchTree.cpp.o"
   "../bin/project_3.pdb"

@@ -11,10 +11,10 @@
 #include "BinarySearchTree.h"
 #include "BinarySearchTree.cpp"
 
-#define INVENTORY_FILE_NAME "inventory1.dat"
-#define TRANSACTION_LOG_NAME "transaction1a.log"
+#define INVENTORY_FILE_NAME "inventory5.dat"
+#define TRANSACTION_LOG_NAME "transaction5a.log"
 #define ERROR_LOG_NAME "error.log"
-#define OUTPUT_FILE_NAME "redbox_kiosk.txt"
+#define OUTPUT_FILE_NAME "redbox_kiosk5.txt"
 
 using namespace std;
 

@@ -177,32 +177,32 @@ src/Node.cpp.s:
 	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/Node.cpp.s
 .PHONY : src/Node.cpp.s
 
-src/main.o: src/main.cpp.o
+src/main2.o: src/main2.cpp.o
 
-.PHONY : src/main.o
+.PHONY : src/main2.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/main2.cpp.o:
+	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/main2.cpp.o
+.PHONY : src/main2.cpp.o
 
-src/main.i: src/main.cpp.i
+src/main2.i: src/main2.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/main2.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/main2.cpp.i:
+	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/main2.cpp.i
+.PHONY : src/main2.cpp.i
 
-src/main.s: src/main.cpp.s
+src/main2.s: src/main2.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/main2.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/main2.cpp.s:
+	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/main2.cpp.s
+.PHONY : src/main2.cpp.s
 
 # Help Target
 help:
@@ -219,9 +219,9 @@ help:
 	@echo "... src/Node.o"
 	@echo "... src/Node.i"
 	@echo "... src/Node.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/main2.o"
+	@echo "... src/main2.i"
+	@echo "... src/main2.s"
 .PHONY : help
 
 

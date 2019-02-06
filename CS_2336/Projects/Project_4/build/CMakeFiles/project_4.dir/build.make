@@ -129,33 +129,9 @@ CMakeFiles/project_4.dir/src/String.cpp.o.provides: CMakeFiles/project_4.dir/src
 CMakeFiles/project_4.dir/src/String.cpp.o.provides.build: CMakeFiles/project_4.dir/src/String.cpp.o
 
 
-CMakeFiles/project_4.dir/src/Customer.cpp.o: CMakeFiles/project_4.dir/flags.make
-CMakeFiles/project_4.dir/src/Customer.cpp.o: ../src/Customer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project_4.dir/src/Customer.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_4.dir/src/Customer.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Customer.cpp
-
-CMakeFiles/project_4.dir/src/Customer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_4.dir/src/Customer.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Customer.cpp > CMakeFiles/project_4.dir/src/Customer.cpp.i
-
-CMakeFiles/project_4.dir/src/Customer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_4.dir/src/Customer.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Customer.cpp -o CMakeFiles/project_4.dir/src/Customer.cpp.s
-
-CMakeFiles/project_4.dir/src/Customer.cpp.o.requires:
-
-.PHONY : CMakeFiles/project_4.dir/src/Customer.cpp.o.requires
-
-CMakeFiles/project_4.dir/src/Customer.cpp.o.provides: CMakeFiles/project_4.dir/src/Customer.cpp.o.requires
-	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Customer.cpp.o.provides.build
-.PHONY : CMakeFiles/project_4.dir/src/Customer.cpp.o.provides
-
-CMakeFiles/project_4.dir/src/Customer.cpp.o.provides.build: CMakeFiles/project_4.dir/src/Customer.cpp.o
-
-
 CMakeFiles/project_4.dir/src/User.cpp.o: CMakeFiles/project_4.dir/flags.make
 CMakeFiles/project_4.dir/src/User.cpp.o: ../src/User.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project_4.dir/src/User.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/project_4.dir/src/User.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_4.dir/src/User.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/User.cpp
 
 CMakeFiles/project_4.dir/src/User.cpp.i: cmake_force
@@ -177,33 +153,9 @@ CMakeFiles/project_4.dir/src/User.cpp.o.provides: CMakeFiles/project_4.dir/src/U
 CMakeFiles/project_4.dir/src/User.cpp.o.provides.build: CMakeFiles/project_4.dir/src/User.cpp.o
 
 
-CMakeFiles/project_4.dir/src/Administrator.cpp.o: CMakeFiles/project_4.dir/flags.make
-CMakeFiles/project_4.dir/src/Administrator.cpp.o: ../src/Administrator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project_4.dir/src/Administrator.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_4.dir/src/Administrator.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Administrator.cpp
-
-CMakeFiles/project_4.dir/src/Administrator.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_4.dir/src/Administrator.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Administrator.cpp > CMakeFiles/project_4.dir/src/Administrator.cpp.i
-
-CMakeFiles/project_4.dir/src/Administrator.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_4.dir/src/Administrator.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Administrator.cpp -o CMakeFiles/project_4.dir/src/Administrator.cpp.s
-
-CMakeFiles/project_4.dir/src/Administrator.cpp.o.requires:
-
-.PHONY : CMakeFiles/project_4.dir/src/Administrator.cpp.o.requires
-
-CMakeFiles/project_4.dir/src/Administrator.cpp.o.provides: CMakeFiles/project_4.dir/src/Administrator.cpp.o.requires
-	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Administrator.cpp.o.provides.build
-.PHONY : CMakeFiles/project_4.dir/src/Administrator.cpp.o.provides
-
-CMakeFiles/project_4.dir/src/Administrator.cpp.o.provides.build: CMakeFiles/project_4.dir/src/Administrator.cpp.o
-
-
 CMakeFiles/project_4.dir/src/Order.cpp.o: CMakeFiles/project_4.dir/flags.make
 CMakeFiles/project_4.dir/src/Order.cpp.o: ../src/Order.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project_4.dir/src/Order.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/project_4.dir/src/Order.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_4.dir/src/Order.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Order.cpp
 
 CMakeFiles/project_4.dir/src/Order.cpp.i: cmake_force
@@ -227,7 +179,7 @@ CMakeFiles/project_4.dir/src/Order.cpp.o.provides.build: CMakeFiles/project_4.di
 
 CMakeFiles/project_4.dir/src/Auditorium.cpp.o: CMakeFiles/project_4.dir/flags.make
 CMakeFiles/project_4.dir/src/Auditorium.cpp.o: ../src/Auditorium.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/project_4.dir/src/Auditorium.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/project_4.dir/src/Auditorium.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_4.dir/src/Auditorium.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Auditorium.cpp
 
 CMakeFiles/project_4.dir/src/Auditorium.cpp.i: cmake_force
@@ -251,7 +203,7 @@ CMakeFiles/project_4.dir/src/Auditorium.cpp.o.provides.build: CMakeFiles/project
 
 CMakeFiles/project_4.dir/src/Node.cpp.o: CMakeFiles/project_4.dir/flags.make
 CMakeFiles/project_4.dir/src/Node.cpp.o: ../src/Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/project_4.dir/src/Node.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/project_4.dir/src/Node.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_4.dir/src/Node.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Node.cpp
 
 CMakeFiles/project_4.dir/src/Node.cpp.i: cmake_force
@@ -275,7 +227,7 @@ CMakeFiles/project_4.dir/src/Node.cpp.o.provides.build: CMakeFiles/project_4.dir
 
 CMakeFiles/project_4.dir/src/TheaterSeat.cpp.o: CMakeFiles/project_4.dir/flags.make
 CMakeFiles/project_4.dir/src/TheaterSeat.cpp.o: ../src/TheaterSeat.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/project_4.dir/src/TheaterSeat.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/project_4.dir/src/TheaterSeat.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_4.dir/src/TheaterSeat.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/TheaterSeat.cpp
 
 CMakeFiles/project_4.dir/src/TheaterSeat.cpp.i: cmake_force
@@ -299,7 +251,7 @@ CMakeFiles/project_4.dir/src/TheaterSeat.cpp.o.provides.build: CMakeFiles/projec
 
 CMakeFiles/project_4.dir/src/Seat.cpp.o: CMakeFiles/project_4.dir/flags.make
 CMakeFiles/project_4.dir/src/Seat.cpp.o: ../src/Seat.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/project_4.dir/src/Seat.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/project_4.dir/src/Seat.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_4.dir/src/Seat.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Seat.cpp
 
 CMakeFiles/project_4.dir/src/Seat.cpp.i: cmake_force
@@ -326,9 +278,7 @@ project_4_OBJECTS = \
 "CMakeFiles/project_4.dir/src/main.cpp.o" \
 "CMakeFiles/project_4.dir/src/HashMap.cpp.o" \
 "CMakeFiles/project_4.dir/src/String.cpp.o" \
-"CMakeFiles/project_4.dir/src/Customer.cpp.o" \
 "CMakeFiles/project_4.dir/src/User.cpp.o" \
-"CMakeFiles/project_4.dir/src/Administrator.cpp.o" \
 "CMakeFiles/project_4.dir/src/Order.cpp.o" \
 "CMakeFiles/project_4.dir/src/Auditorium.cpp.o" \
 "CMakeFiles/project_4.dir/src/Node.cpp.o" \
@@ -341,9 +291,7 @@ project_4_EXTERNAL_OBJECTS =
 ../bin/project_4: CMakeFiles/project_4.dir/src/main.cpp.o
 ../bin/project_4: CMakeFiles/project_4.dir/src/HashMap.cpp.o
 ../bin/project_4: CMakeFiles/project_4.dir/src/String.cpp.o
-../bin/project_4: CMakeFiles/project_4.dir/src/Customer.cpp.o
 ../bin/project_4: CMakeFiles/project_4.dir/src/User.cpp.o
-../bin/project_4: CMakeFiles/project_4.dir/src/Administrator.cpp.o
 ../bin/project_4: CMakeFiles/project_4.dir/src/Order.cpp.o
 ../bin/project_4: CMakeFiles/project_4.dir/src/Auditorium.cpp.o
 ../bin/project_4: CMakeFiles/project_4.dir/src/Node.cpp.o
@@ -351,7 +299,7 @@ project_4_EXTERNAL_OBJECTS =
 ../bin/project_4: CMakeFiles/project_4.dir/src/Seat.cpp.o
 ../bin/project_4: CMakeFiles/project_4.dir/build.make
 ../bin/project_4: CMakeFiles/project_4.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable ../bin/project_4"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable ../bin/project_4"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/project_4.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -362,9 +310,7 @@ CMakeFiles/project_4.dir/build: ../bin/project_4
 CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/main.cpp.o.requires
 CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/HashMap.cpp.o.requires
 CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/String.cpp.o.requires
-CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/Customer.cpp.o.requires
 CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/User.cpp.o.requires
-CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/Administrator.cpp.o.requires
 CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/Order.cpp.o.requires
 CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/Auditorium.cpp.o.requires
 CMakeFiles/project_4.dir/requires: CMakeFiles/project_4.dir/src/Node.cpp.o.requires

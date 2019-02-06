@@ -10,7 +10,7 @@ set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
 add_executable(project_3
-    "${PROJECT_SOURCE_DIR}/src/main.cpp"
+    "${PROJECT_SOURCE_DIR}/src/main2.cpp"
     "${PROJECT_SOURCE_DIR}/src/Node.cpp"
     "${PROJECT_SOURCE_DIR}/src/BinarySearchTree.cpp"
 )

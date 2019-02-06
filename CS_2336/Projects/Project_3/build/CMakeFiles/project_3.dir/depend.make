@@ -8,8 +8,8 @@ CMakeFiles/project_3.dir/src/BinarySearchTree.cpp.o: ../src/BinarySearchTree.cpp
 CMakeFiles/project_3.dir/src/Node.cpp.o: ../include/Node.h
 CMakeFiles/project_3.dir/src/Node.cpp.o: ../src/Node.cpp
 
-CMakeFiles/project_3.dir/src/main.cpp.o: ../include/BinarySearchTree.h
-CMakeFiles/project_3.dir/src/main.cpp.o: ../include/Node.h
-CMakeFiles/project_3.dir/src/main.cpp.o: ../src/BinarySearchTree.cpp
-CMakeFiles/project_3.dir/src/main.cpp.o: ../src/main.cpp
+CMakeFiles/project_3.dir/src/main2.cpp.o: ../include/BinarySearchTree.h
+CMakeFiles/project_3.dir/src/main2.cpp.o: ../include/Node.h
+CMakeFiles/project_3.dir/src/main2.cpp.o: ../src/BinarySearchTree.cpp
+CMakeFiles/project_3.dir/src/main2.cpp.o: ../src/main2.cpp
 

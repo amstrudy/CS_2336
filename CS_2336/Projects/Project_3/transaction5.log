@@ -9,7 +9,7 @@ rent "Office Christmas Party"
 add "Passengers",4
 return "Patriots Day"
 add "War on Everyone"3
-remove "Storks",
+remove "Storks"
 rent "Collateral Beauty"
 add "Trolls",1
 remove "Moana",2

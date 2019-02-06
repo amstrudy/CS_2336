@@ -6,33 +6,9 @@
 
 #IncludeRegexTransform: 
 
-../include/Administrator.h
-string
--
-User.h
-../include/User.h
-Auditorium.h
-../include/Auditorium.h
-
 ../include/Auditorium.h
 TheaterSeat.h
 ../include/TheaterSeat.h
-
-../include/Customer.h
-iostream
--
-fstream
--
-string
--
-User.h
-../include/User.h
-Order.h
-../include/Order.h
-String.h
-../include/String.h
-Auditorium.h
-../include/Auditorium.h
 
 ../include/HashMap.h
 
@@ -57,16 +33,20 @@ Node.h
 ../include/Node.h
 
 ../include/User.h
-string
--
-String.h
-../include/String.h
-
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Administrator.cpp
 iostream
 -
-Administrator.h
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Administrator.h
+fstream
+-
+string
+-
+User.h
+../include/User.h
+Order.h
+../include/Order.h
+String.h
+../include/String.h
+Auditorium.h
+../include/Auditorium.h
 
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Auditorium.cpp
 iostream
@@ -86,23 +66,13 @@ TheaterSeat.h
 Auditorium.h
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Auditorium.h
 
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Customer.cpp
-iostream
--
-fstream
--
-Customer.h
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Customer.h
-Seat.h
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Seat.h
-
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/HashMap.cpp
 iostream
 -
 HashMap.h
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/HashMap.h
-Customer.h
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Customer.h
+User.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/User.h
 
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Node.cpp
 Node.h
@@ -125,10 +95,14 @@ TheaterSeat.h
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/TheaterSeat.h
 
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/User.cpp
-User.h
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/User.h
 iostream
 -
+fstream
+-
+User.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/User.h
+Seat.h
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Seat.h
 
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/main.cpp
 iostream
@@ -147,10 +121,6 @@ HashMap.cpp
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/HashMap.cpp
 User.h
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/User.h
-Customer.h
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Customer.h
-Administrator.h
-/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/Administrator.h
 String.h
 /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_4/src/String.h
 

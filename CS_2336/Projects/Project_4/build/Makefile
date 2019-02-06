@@ -123,33 +123,6 @@ project_4/fast:
 	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/build
 .PHONY : project_4/fast
 
-src/Administrator.o: src/Administrator.cpp.o
-
-.PHONY : src/Administrator.o
-
-# target to build an object file
-src/Administrator.cpp.o:
-	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Administrator.cpp.o
-.PHONY : src/Administrator.cpp.o
-
-src/Administrator.i: src/Administrator.cpp.i
-
-.PHONY : src/Administrator.i
-
-# target to preprocess a source file
-src/Administrator.cpp.i:
-	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Administrator.cpp.i
-.PHONY : src/Administrator.cpp.i
-
-src/Administrator.s: src/Administrator.cpp.s
-
-.PHONY : src/Administrator.s
-
-# target to generate assembly for a file
-src/Administrator.cpp.s:
-	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Administrator.cpp.s
-.PHONY : src/Administrator.cpp.s
-
 src/Auditorium.o: src/Auditorium.cpp.o
 
 .PHONY : src/Auditorium.o
@@ -176,33 +149,6 @@ src/Auditorium.s: src/Auditorium.cpp.s
 src/Auditorium.cpp.s:
 	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Auditorium.cpp.s
 .PHONY : src/Auditorium.cpp.s
-
-src/Customer.o: src/Customer.cpp.o
-
-.PHONY : src/Customer.o
-
-# target to build an object file
-src/Customer.cpp.o:
-	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Customer.cpp.o
-.PHONY : src/Customer.cpp.o
-
-src/Customer.i: src/Customer.cpp.i
-
-.PHONY : src/Customer.i
-
-# target to preprocess a source file
-src/Customer.cpp.i:
-	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Customer.cpp.i
-.PHONY : src/Customer.cpp.i
-
-src/Customer.s: src/Customer.cpp.s
-
-.PHONY : src/Customer.s
-
-# target to generate assembly for a file
-src/Customer.cpp.s:
-	$(MAKE) -f CMakeFiles/project_4.dir/build.make CMakeFiles/project_4.dir/src/Customer.cpp.s
-.PHONY : src/Customer.cpp.s
 
 src/HashMap.o: src/HashMap.cpp.o
 
@@ -429,15 +375,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... project_4"
 	@echo "... rebuild_cache"
-	@echo "... src/Administrator.o"
-	@echo "... src/Administrator.i"
-	@echo "... src/Administrator.s"
 	@echo "... src/Auditorium.o"
 	@echo "... src/Auditorium.i"
 	@echo "... src/Auditorium.s"
-	@echo "... src/Customer.o"
-	@echo "... src/Customer.i"
-	@echo "... src/Customer.s"
 	@echo "... src/HashMap.o"
 	@echo "... src/HashMap.i"
 	@echo "... src/HashMap.s"

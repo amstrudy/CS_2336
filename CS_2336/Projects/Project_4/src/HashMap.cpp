@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "HashMap.h"
-#include "Customer.h"
+#include "User.h"
 
 template <typename K, typename V>
 HashMap<K, V>::HashMap ()
@@ -106,7 +106,7 @@ void HashMap<K, V>::print ()
     for (size_t i = 0; i < this->size; ++i)
     {
         if (this->map[i] != nullptr)
-            std::cout << this->map[i]->getKey()->getDatum() << " | " << std::flush;
+            std::cout << this->map[i]->getUsername() << " | " << std::flush;
         else
             std::cout << "--- | " <<std::flush;
     }
@@ -147,7 +147,7 @@ V * HashMap<K, V>::get(K *key)
             if (this->map[(hash + i) % this->size] == nullptr) // not found!
                 return nullptr;
             if (this->map[(hash + i) % this->size]->getKey()->getDatum() == key->getDatum())
-                return this->map[hash];
+                return this->map[(hash + i) % this->size];
         }
     }
 }

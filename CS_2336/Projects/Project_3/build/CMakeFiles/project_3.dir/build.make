@@ -57,28 +57,28 @@ include CMakeFiles/project_3.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/project_3.dir/flags.make
 
-CMakeFiles/project_3.dir/src/main.cpp.o: CMakeFiles/project_3.dir/flags.make
-CMakeFiles/project_3.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project_3.dir/src/main.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_3.dir/src/main.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/main.cpp
+CMakeFiles/project_3.dir/src/main2.cpp.o: CMakeFiles/project_3.dir/flags.make
+CMakeFiles/project_3.dir/src/main2.cpp.o: ../src/main2.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/project_3.dir/src/main2.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/project_3.dir/src/main2.cpp.o -c /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/main2.cpp
 
-CMakeFiles/project_3.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_3.dir/src/main.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/main.cpp > CMakeFiles/project_3.dir/src/main.cpp.i
+CMakeFiles/project_3.dir/src/main2.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/project_3.dir/src/main2.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/main2.cpp > CMakeFiles/project_3.dir/src/main2.cpp.i
 
-CMakeFiles/project_3.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_3.dir/src/main.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/main.cpp -o CMakeFiles/project_3.dir/src/main.cpp.s
+CMakeFiles/project_3.dir/src/main2.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/project_3.dir/src/main2.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/anja-ubuntu/Documents/2018_Fall/CS_2336/Projects/Project_3/src/main2.cpp -o CMakeFiles/project_3.dir/src/main2.cpp.s
 
-CMakeFiles/project_3.dir/src/main.cpp.o.requires:
+CMakeFiles/project_3.dir/src/main2.cpp.o.requires:
 
-.PHONY : CMakeFiles/project_3.dir/src/main.cpp.o.requires
+.PHONY : CMakeFiles/project_3.dir/src/main2.cpp.o.requires
 
-CMakeFiles/project_3.dir/src/main.cpp.o.provides: CMakeFiles/project_3.dir/src/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/main.cpp.o.provides.build
-.PHONY : CMakeFiles/project_3.dir/src/main.cpp.o.provides
+CMakeFiles/project_3.dir/src/main2.cpp.o.provides: CMakeFiles/project_3.dir/src/main2.cpp.o.requires
+	$(MAKE) -f CMakeFiles/project_3.dir/build.make CMakeFiles/project_3.dir/src/main2.cpp.o.provides.build
+.PHONY : CMakeFiles/project_3.dir/src/main2.cpp.o.provides
 
-CMakeFiles/project_3.dir/src/main.cpp.o.provides.build: CMakeFiles/project_3.dir/src/main.cpp.o
+CMakeFiles/project_3.dir/src/main2.cpp.o.provides.build: CMakeFiles/project_3.dir/src/main2.cpp.o
 
 
 CMakeFiles/project_3.dir/src/Node.cpp.o: CMakeFiles/project_3.dir/flags.make
@@ -131,14 +131,14 @@ CMakeFiles/project_3.dir/src/BinarySearchTree.cpp.o.provides.build: CMakeFiles/p
 
 # Object files for target project_3
 project_3_OBJECTS = \
-"CMakeFiles/project_3.dir/src/main.cpp.o" \
+"CMakeFiles/project_3.dir/src/main2.cpp.o" \
 "CMakeFiles/project_3.dir/src/Node.cpp.o" \
 "CMakeFiles/project_3.dir/src/BinarySearchTree.cpp.o"
 
 # External object files for target project_3
 project_3_EXTERNAL_OBJECTS =
 
-../bin/project_3: CMakeFiles/project_3.dir/src/main.cpp.o
+../bin/project_3: CMakeFiles/project_3.dir/src/main2.cpp.o
 ../bin/project_3: CMakeFiles/project_3.dir/src/Node.cpp.o
 ../bin/project_3: CMakeFiles/project_3.dir/src/BinarySearchTree.cpp.o
 ../bin/project_3: CMakeFiles/project_3.dir/build.make
@@ -151,7 +151,7 @@ CMakeFiles/project_3.dir/build: ../bin/project_3
 
 .PHONY : CMakeFiles/project_3.dir/build
 
-CMakeFiles/project_3.dir/requires: CMakeFiles/project_3.dir/src/main.cpp.o.requires
+CMakeFiles/project_3.dir/requires: CMakeFiles/project_3.dir/src/main2.cpp.o.requires
 CMakeFiles/project_3.dir/requires: CMakeFiles/project_3.dir/src/Node.cpp.o.requires
 CMakeFiles/project_3.dir/requires: CMakeFiles/project_3.dir/src/BinarySearchTree.cpp.o.requires
 

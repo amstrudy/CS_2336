@@ -12,12 +12,28 @@
 
 Auditorium::Auditorium ()
 {
+    this->IN_FILE = "";
     this->first = nullptr;
+    this->height = 0;
+    this->length = 0;
+    this->numOpenSeats = 0;
+    this->numReservedSeats = 0;
+    this->totalA = 0;
+    this->totalC = 0;
+    this->totalS = 0;
 }
 
 Auditorium::Auditorium(std::string FILENAME)
 {
     this->IN_FILE = FILENAME;
+    this->first = nullptr;
+    this->height = 0;
+    this->length = 0;
+    this->numOpenSeats = 0;
+    this->numReservedSeats = 0;
+    this->totalA = 0;
+    this->totalC = 0;
+    this->totalS = 0;
     std::ifstream theater(this->IN_FILE);
     if (theater) // ensure file exists
     {
@@ -95,7 +111,6 @@ Auditorium::Auditorium(std::string FILENAME)
         }
         this->height = numRows;
         this->length = numCols;
-        std::cout << "cols: " << this->length << std::endl;
         theater.close();
     }
     else
@@ -228,6 +243,10 @@ int * Auditorium::bestAvailable (unsigned int numSeats)
 
 bool Auditorium::isAvailable (unsigned int rowNum, char startingSeatLetter, unsigned int numSeats)
 {
+    if (startingSeatLetter - 65 + numSeats > this->length)
+    {
+        return false;
+    }
     for (size_t i = 0; i < numSeats; ++i)
     {
         if (this->goTo(rowNum-1, startingSeatLetter-65+static_cast<unsigned int>(i))->getReserved())

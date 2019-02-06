@@ -9,8 +9,6 @@
 #include "HashMap.h"
 #include "HashMap.cpp"
 #include "User.h"
-#include "Customer.h"
-#include "Administrator.h"
 #include "String.h"
 
 #define USER_FILE "userdb.dat"
@@ -22,8 +20,8 @@ using namespace std;
 
 void parseUsers (HashMap<String, User> *);
 User * logIn (HashMap<String, User> *);
-void menuSelectionCustomer (Customer *, Auditorium *, Auditorium *, Auditorium *);
-void menuSelectionAdministrator (Administrator *, Auditorium *, Auditorium *, Auditorium *);
+void menuSelectionCustomer (User *, Auditorium *, Auditorium *, Auditorium *);
+void menuSelectionAdministrator (User *, Auditorium *, Auditorium *, Auditorium *);
 
 int main ()
 {
@@ -34,19 +32,19 @@ int main ()
     Auditorium *auditorium3 = new Auditorium(FILE_A_3);
     while (true)
     {
-        User *user = logIn(h);
-        while (user == nullptr)
+        User *u = logIn(h);
+        while (u == nullptr)
         {
-            cout << "You entered an invalid username/password combo too many times. Please try again." << endl;
-            user = logIn(h);
+            cout << "You entered an invalid username/password combination too many times. Please try again." << endl;
+            u = logIn(h);
         }
-        if (user->getUserType() == CUSTOMER)
+        if (u->getIsAdmin() == false)
         {
-            menuSelectionCustomer(dynamic_cast<Customer *>(user), auditorium1, auditorium2, auditorium3);
+            menuSelectionCustomer(u, auditorium1, auditorium2, auditorium3);
         }
-        if (user->getUserType() == ADMIN)
+        else if (u->getIsAdmin() == true)
         {
-            menuSelectionAdministrator(dynamic_cast<Administrator *>(user), auditorium1, auditorium2, auditorium3);
+            menuSelectionAdministrator(u, auditorium1, auditorium2, auditorium3);
         }
     }
     return 0;
@@ -65,16 +63,16 @@ void parseUsers (HashMap<String, User> *h)
                 istringstream iss(lineStr);
                 string username, password;
                 iss >> username >> password;
-                User *newUser;
                 if (username == "admin")
                 {
-                    newUser = new Administrator(username, password);
+                    User *newUser = new User(username, password, true);
+                    h->put(newUser->getKey(), newUser);
                 }
                 else
                 {
-                    newUser = new Customer(username, password);
+                    User *newUser = new User(username, password, false);
+                    h->put(newUser->getKey(), newUser);
                 }
-                h->put(newUser->getKey(), newUser);
             }
         }
     }
@@ -83,6 +81,7 @@ void parseUsers (HashMap<String, User> *h)
         std::cerr << "The user file does not exist. The program will now exit." << std::endl;
         exit(1);
     }
+    in.close();
 }
 
 User * logIn (HashMap<String, User> *h)
@@ -90,7 +89,7 @@ User * logIn (HashMap<String, User> *h)
     bool invalidLogin = true;
     unsigned int numTimesInvalid = 0;
     string username, password;
-    User *check;
+    User *u;
     
     cout << "Welcome to the Ticket Reservation System for the Avengers 4! Please log in below.\nUsername: " << flush;
     cin >> username;
@@ -98,25 +97,17 @@ User * logIn (HashMap<String, User> *h)
     {
         cout << "Password: " << flush;
         cin >> password;
-        if (username == "admin")
+        String *k = new String(username);
+        if (h->get(k) == nullptr)
         {
-            check = new Administrator(username, password);
-            check->setUserType(ADMIN);
-        }
-        else
-        {
-            check = new Customer (username, password);
-            check->setUserType(CUSTOMER);
-        }
-        if (h->get(check->getKey()) == nullptr)
-        {
-            cerr << "The username/password combo was not valid. Please try again!" << endl;
+            cerr << "The username was not valid. Please try again!" << endl;
             numTimesInvalid++;
             invalidLogin = true;
         }
-        else if (h->get(check->getKey())->getPassword() == password)
+        else if (h->get(k)->getPassword() == password)
         {
             cout << "Welcome " << username << "!" << endl;
+            u = h->get(k);
             invalidLogin = false;
         }
         else
@@ -127,10 +118,10 @@ User * logIn (HashMap<String, User> *h)
         }
     }
     if (numTimesInvalid >= 3) return nullptr;
-    return check;
+    return u;
 }
 
-void menuSelectionCustomer (Customer *customer, Auditorium *auditorium1, Auditorium *auditorium2, Auditorium *auditorium3)
+void menuSelectionCustomer (User *customer, Auditorium *auditorium1, Auditorium *auditorium2, Auditorium *auditorium3)
 {
     string menuSelectionS;
     unsigned int menuSelection;
@@ -184,7 +175,7 @@ void menuSelectionCustomer (Customer *customer, Auditorium *auditorium1, Auditor
     }
 }
 
-void menuSelectionAdministrator (Administrator *administrator, Auditorium *auditorium1, Auditorium *auditorium2, Auditorium *auditorium3)
+void menuSelectionAdministrator (User *administrator, Auditorium *auditorium1, Auditorium *auditorium2, Auditorium *auditorium3)
 {
     string menuSelectionS;
     unsigned int menuSelection;

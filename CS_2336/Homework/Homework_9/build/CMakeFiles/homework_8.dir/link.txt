@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/homework_8.dir/src/main.cpp.o  -o ../bin/homework_8 -rdynamic 

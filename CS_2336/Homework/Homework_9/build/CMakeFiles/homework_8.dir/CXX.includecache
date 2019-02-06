@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/anja-ubuntu/Documents/2018_Fall/CS_2336/Homework/Homework_9/src/main.cpp
+iostream
+-
+fstream
+-
+cstdlib
+-
+
